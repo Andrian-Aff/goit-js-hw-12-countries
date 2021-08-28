@@ -32,8 +32,7 @@ function renderMarkup(arrCountries) {
     function openOnClick (event){
         // console.log(event.target)
         console.log(event.target.textContent)
-        fetchCountries(event.target.textContent).then(renderMarkup)
-        .catch(onFetchError)
+        fetchCountries(event.target.textContent)
      }
 
     function renderListCountry(arrCountries) {
@@ -69,12 +68,4 @@ function renderMarkup(arrCountries) {
     let selectedCountry = document.querySelector('.country__title');
     console.log(selectedCountry.textContent)
     refs.inputEl.value = selectedCountry.textContent; 
-
-    function onFetchError() {
-    
-        error({
-            title: "I can't find this country!",
-            text: "Please check the spelling!",
-            delay: 1500,
-        });
-         }
+    }
